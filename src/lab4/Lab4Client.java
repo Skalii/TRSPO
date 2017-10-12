@@ -14,7 +14,7 @@ public class Lab4Client {
             System.out.println("Connecting to " + serverName + " on port " + port);
             Socket client = new Socket(serverName, port);
 
-            System.out.println("Just connected to " + client.getRemoteSocketAddress());
+            System.out.println("Just connected to " + client.getRemoteSocketAddress() + "\n");
             while (true) {
                 OutputStream outToServer = client.getOutputStream();
                 DataOutputStream out = new DataOutputStream(outToServer);

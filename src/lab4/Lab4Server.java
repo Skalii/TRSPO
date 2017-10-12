@@ -16,7 +16,7 @@ public class Lab4Server extends Thread {
             System.out.println("Waiting for client on port " +
                     serverSocket.getLocalPort() + "...");
             Socket server = serverSocket.accept();
-            System.out.println("Just connected to " + server.getRemoteSocketAddress());
+            System.out.println("Just connected to " + server.getRemoteSocketAddress() + "\n");
             while (true) {
                 Thread.sleep(5000);
                 DataInputStream in = new DataInputStream(server.getInputStream());
