@@ -4,7 +4,7 @@ import java.net.*;
 import java.io.*;
 import java.util.Scanner;
 
-public class Lab4SocketClient {
+public class Lab4Client {
 
     public static void main(String[] args) {
         String serverName = /*"192.168.10.154"*/ "localhost";

@@ -3,10 +3,10 @@ package lab4;
 import java.net.*;
 import java.io.*;
 
-public class Lab4SocketServer extends Thread {
+public class Lab4Server extends Thread {
     private ServerSocket serverSocket;
 
-    public Lab4SocketServer(int port) throws IOException {
+    public Lab4Server(int port) throws IOException {
         serverSocket = new ServerSocket(port);
         serverSocket.setSoTimeout(10000);
     }
@@ -38,7 +38,7 @@ public class Lab4SocketServer extends Thread {
     public static void main(String[] args) {
         int port = 7777;
         try {
-            Thread t = new Lab4SocketServer(port);
+            Thread t = new Lab4Server(port);
             t.start();
         } catch (IOException e) {
             e.printStackTrace();
