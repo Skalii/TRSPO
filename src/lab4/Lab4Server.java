@@ -16,15 +16,17 @@ public class Lab4Server extends Thread {
             System.out.println("Waiting for client on port " +
                     serverSocket.getLocalPort() + "...");
             Socket server = serverSocket.accept();
+            System.out.println("Just connected to " + server.getRemoteSocketAddress());
             while (true) {
                 Thread.sleep(5000);
-                System.out.println("Just connected to " + server.getRemoteSocketAddress());
                 DataInputStream in = new DataInputStream(server.getInputStream());
 
-                System.out.println(in.readUTF());
+                String message = in.readUTF();
+                System.out.println("Client says: " + message);
                 DataOutputStream out = new DataOutputStream(server.getOutputStream());
-                out.writeUTF("Thank you for connecting to " + server.getLocalSocketAddress()
-                        + "\nGoodbye!");
+
+                System.out.println("Message to the client: " + message);
+                out.writeUTF(message);
             }
             //server.close();
         } catch (SocketTimeoutException s) {

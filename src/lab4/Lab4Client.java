@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Lab4Client {
 
     public static void main(String[] args) {
-        String serverName = /*"192.168.10.154"*/ "localhost";
+        String serverName = "localhost";
         int port = 7777;
         Scanner scanner = new Scanner(System.in);
         try {
@@ -22,11 +22,11 @@ public class Lab4Client {
                 System.out.print("Message to the server: ");
                 String str = scanner.nextLine();
 
-                out.writeUTF(/*"Hello from " +*/ str /*client.getLocalSocketAddress()*/);
+                out.writeUTF(str);
                 InputStream inFromServer = client.getInputStream();
                 DataInputStream in = new DataInputStream(inFromServer);
 
-                System.out.println("Server says " + in.readUTF());
+                System.out.println("Server says: " + in.readUTF());
                 //client.close();
             }
         } catch (IOException e) {
