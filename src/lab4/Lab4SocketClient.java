@@ -1,0 +1,36 @@
+package lab4;
+
+import java.net.*;
+import java.io.*;
+import java.util.Scanner;
+
+public class Lab4SocketClient {
+
+    public static void main(String[] args) {
+        String serverName = /*"192.168.10.154"*/ "localhost";
+        int port = 7777;
+        Scanner scanner = new Scanner(System.in);
+        try {
+            System.out.println("Connecting to " + serverName + " on port " + port);
+            Socket client = new Socket(serverName, port);
+
+            System.out.println("Just connected to " + client.getRemoteSocketAddress());
+            while (true) {
+                OutputStream outToServer = client.getOutputStream();
+                DataOutputStream out = new DataOutputStream(outToServer);
+
+                System.out.print("Message to the server: ");
+                String str = scanner.nextLine();
+
+                out.writeUTF(/*"Hello from " +*/ str /*client.getLocalSocketAddress()*/);
+                InputStream inFromServer = client.getInputStream();
+                DataInputStream in = new DataInputStream(inFromServer);
+
+                System.out.println("Server says " + in.readUTF());
+                //client.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
