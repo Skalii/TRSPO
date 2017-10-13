@@ -3,7 +3,7 @@ package lab3;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class Lab3 extends Thread {
+public class Lab3Threads extends Thread {
 
     Thread thread;
     static int i = 0;
@@ -11,8 +11,8 @@ public class Lab3 extends Thread {
     public static void main(String[] args) {
         System.out.println("Введите имена потоков: ");
 
-        new Thread(new Lab3()).start();
-        new Thread(new Lab3()).start();
+        new Thread(new Lab3Threads()).start();
+        new Thread(new Lab3Threads()).start();
     }
 
     public void run() {
