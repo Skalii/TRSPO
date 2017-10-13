@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Lab3Threads extends Thread {
 
-    Thread thread;
+    private Thread thread;
     static int i = 0;
 
     public static void main(String[] args) {
