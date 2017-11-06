@@ -1,4 +1,4 @@
-package lab5;
+package lab5.lab5_1;
 
 import java.io.File;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -12,7 +12,6 @@ import org.w3c.dom.Element;
 public class Lab5XMLParse {
 
     public static void main(String[] args) {
-
         try {
             File inputFile = new File("src/lab5/input.txt");
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
