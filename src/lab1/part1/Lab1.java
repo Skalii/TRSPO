@@ -1,8 +1,9 @@
-package lab1;
+package lab1.part1;
 
 import java.util.Scanner;
 
 public class Lab1 {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -16,5 +17,6 @@ public class Lab1 {
 
         Lab1MultDiv calcMultDiv = new Lab1MultDiv(a, b);
         System.out.println("Произведение: " + calcMultDiv.mult() + "\nЧастное: " + calcMultDiv.div());
+
     }
 }

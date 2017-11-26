@@ -1,6 +1,6 @@
-package lab2;
+package lab1.part2;
 
-public class Lab2Run2 implements Runnable {
+public class Lab1Run2 implements Runnable {
 
     @Override
     public void run() {

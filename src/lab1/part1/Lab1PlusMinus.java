@@ -1,4 +1,4 @@
-package lab1;
+package lab1.part1;
 
 public class Lab1PlusMinus {
     protected double a, b;

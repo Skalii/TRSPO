@@ -1,4 +1,4 @@
-package lab1;
+package lab1.part1;
 
 public class Lab1MultDiv extends Lab1PlusMinus {
 

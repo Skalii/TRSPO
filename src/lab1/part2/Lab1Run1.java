@@ -1,8 +1,8 @@
-package lab2;
+package lab1.part2;
 
 import java.util.Scanner;
 
-public class Lab2Run1 implements Runnable {
+public class Lab1Run1 implements Runnable {
 
     @Override
     public void run() {

@@ -1,5 +1,7 @@
 <?xml version = "1.0"?>
+
 <class>
+
    <student rollno = "393">
       <firstname>dinkar</firstname>
       <lastname>kad</lastname>
@@ -20,4 +22,5 @@
       <nickname>jazz</nickname>
       <marks>90</marks>
    </student>
+
 </class>

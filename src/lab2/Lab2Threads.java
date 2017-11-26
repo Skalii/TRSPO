@@ -1,9 +1,9 @@
-package lab3;
+package lab2;
 
 import java.util.Objects;
 import java.util.Scanner;
 
-public class Lab3Threads extends Thread {
+public class Lab2Threads extends Thread {
 
     private Thread thread;
     static int i = 0;
@@ -11,8 +11,8 @@ public class Lab3Threads extends Thread {
     public static void main(String[] args) {
         System.out.println("Введите имена потоков: ");
 
-        new Thread(new Lab3Threads()).start();
-        new Thread(new Lab3Threads()).start();
+        new Thread(new Lab2Threads()).start();
+        new Thread(new Lab2Threads()).start();
     }
 
     public void run() {
