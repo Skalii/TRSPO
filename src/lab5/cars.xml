@@ -2,6 +2,6 @@
 <cars>
     <supercars company="Ferrari">
         <carname type="formula one">Ferrari 101</carname>
-        <carname type="sports">Ferrari 202</carname>
+        <carname type="sports">Ferrari 102</carname>
     </supercars>
 </cars>

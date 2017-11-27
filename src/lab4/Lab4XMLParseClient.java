@@ -23,14 +23,11 @@ public class Lab4XMLParseClient {
             NodeList nodeList = document.getElementsByTagName("student");
             int thisChild = 0;
 
+            DataOutputStream dataOutputStream = new DataOutputStream(socketClient.getOutputStream());
+            DataInputStream dataInputStream = new DataInputStream(socketClient.getInputStream());
+
             while (thisChild < nodeList.getLength()) {
                 int j = 1;
-
-                OutputStream outToServer = socketClient.getOutputStream();
-                DataOutputStream dataOutputStream = new DataOutputStream(outToServer);
-
-                InputStream inputStream = socketClient.getInputStream();
-                DataInputStream dataInputStream = new DataInputStream(inputStream);
 
                 dataOutputStream.writeUTF(nodeList
                         .item(thisChild)

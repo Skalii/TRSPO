@@ -17,34 +17,34 @@ public class Lab4XMLParseServer extends Thread {
 
     public void run() {
         try {
-            Socket server = serverSocket.accept();
-            System.out.println("[CLIENT] - connected from " + server.getRemoteSocketAddress() + "\n");
+            Socket socketServer = serverSocket.accept();
+            System.out.println("[CLIENT] - connected from " + socketServer.getRemoteSocketAddress() + "\n");
+
+            DataInputStream dataInputStream = new DataInputStream(socketServer.getInputStream());
+            DataOutputStream dataOutputStream = new DataOutputStream(socketServer.getOutputStream());
 
             while (true) {
                 Thread.sleep(3);
-                DataInputStream in = new DataInputStream(server.getInputStream());
                 String message;
                 try {
-                    message = in.readUTF();
+                    message = dataInputStream.readUTF();
                 } catch (SocketException e) {
                     break;
                 }
                 System.out.println("[CLIENT] - message: " + message);
-                DataOutputStream out = new DataOutputStream(server.getOutputStream());
-
                 System.out.println("[SERVER] - echo message: " + message);
-                out.writeUTF(message);
+
+                dataOutputStream.writeUTF(message);
             }
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
     }
 
-
     public static void main(String[] args) {
         try {
-            Thread t = new Lab4XMLParseServer(7777);
-            t.start();
+            Thread thread = new Lab4XMLParseServer(7777);
+            thread.start();
         } catch (IOException e) {
             e.printStackTrace();
         }
